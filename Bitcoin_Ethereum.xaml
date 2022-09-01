@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1240,2478" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1240,2487" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="37">
       <x:String>System.Activities</x:String>
@@ -77,13 +77,13 @@
       <AssemblyReference>NPOI</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="745,2413" sap2010:WorkflowViewState.IdRef="Sequence_141">
+  <Sequence sap:VirtualizedContainerService.HintSize="745,2422" sap2010:WorkflowViewState.IdRef="Sequence_141">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="703,2321" sap2010:WorkflowViewState.IdRef="Sequence_24">
+    <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="703,2330" sap2010:WorkflowViewState.IdRef="Sequence_24">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="Cash_Balance" />
         <Variable x:TypeArguments="x:String" Name="Cash_TotalSpent" />
@@ -137,6 +137,7 @@
         <Variable x:TypeArguments="x:String" Name="Dege_Total_Received" />
         <Variable x:TypeArguments="x:String" Name="Dege_Total_Spent" />
         <Variable x:TypeArguments="x:String" Name="Dege_currency" />
+        <Variable x:TypeArguments="x:String" Name="DateString" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -161,38 +162,46 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="661,1830" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="AllAddress.xlsx">
+      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="661,1930" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="AllAddress.xlsx">
         <ui:ExcelApplicationScope.Body>
           <ActivityAction x:TypeArguments="ui:WorkbookApplication">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="627,1721" sap2010:WorkflowViewState.IdRef="Sequence_21">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="627,1821" sap2010:WorkflowViewState.IdRef="Sequence_21">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:ExcelReadRange AddHeaders="False" DataTable="[DataTable]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="585,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" Range="A1:A5" SheetName="Sheet1" />
-              <ui:BuildDataTable DataTable="[BuildDataTable]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="585,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;currency&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Crypto_Balance&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Crypto_Balance_USD&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Crypto_Total_Received&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Crypto_Total_Received_USD&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Crypto_Total_Spent&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Crypto_Total_Spent_USD&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName /&gt;&#xA;&lt;/NewDataSet&gt;" />
-              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="585,1431" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:BuildDataTable DataTable="[BuildDataTable]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="585,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;currency&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Crypto_Balance&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Crypto_Balance_USD&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Crypto_Total_Received&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Crypto_Total_Received_USD&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Crypto_Total_Spent&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Crypto_Total_Spent_USD&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;DateString&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;  &lt;TableName /&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="585,1531" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                     </ActivityAction.Argument>
-                    <Sequence sap:VirtualizedContainerService.HintSize="551,1317" sap2010:WorkflowViewState.IdRef="Sequence_114">
+                    <Sequence sap:VirtualizedContainerService.HintSize="551,1417" sap2010:WorkflowViewState.IdRef="Sequence_114">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Scraping" sap:VirtualizedContainerService.HintSize="509,1225" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                      <Sequence DisplayName="Scraping" sap:VirtualizedContainerService.HintSize="509,1325" sap2010:WorkflowViewState.IdRef="Sequence_20">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="467,60" sap2010:WorkflowViewState.IdRef="Assign_77">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[DateString]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[date.Now.ToString]</InArgument>
+                          </Assign.Value>
+                        </Assign>
                         <Assign sap:VirtualizedContainerService.HintSize="467,60" sap2010:WorkflowViewState.IdRef="Assign_1">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[Address]</OutArgument>
@@ -771,7 +780,7 @@
                                               </If>
                                               <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="WriteLine_9" Text="[Crypto_Total_Spent]" />
                                             </Sequence>
-                                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{currency, Address, Crypto_Balance, Crypto_Balance_USD, Crypto_Total_Received, Crypto_Total_Received_USD, Crypto_Total_Spent, Crypto_Total_Spent_USD}]" DataTable="[BuildDataTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="695,185" sap2010:WorkflowViewState.IdRef="AddDataRow_2">
+                                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{currency, Address, Crypto_Balance, Crypto_Balance_USD, Crypto_Total_Received, Crypto_Total_Received_USD, Crypto_Total_Spent, Crypto_Total_Spent_USD, DateString}]" DataTable="[BuildDataTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="695,185" sap2010:WorkflowViewState.IdRef="AddDataRow_2">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -826,7 +835,7 @@
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:UiElementExists DisplayName="Element Exists 'A '" Exists="[Bitcoin_SV]" sap:VirtualizedContainerService.HintSize="688,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                                  <ui:UiElementExists DisplayName="Element Exists 'A '" Exists="[Bitcoin_SV]" sap:VirtualizedContainerService.HintSize="496,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
                                     <ui:UiElementExists.Target>
                                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e97f58de-02a6-438a-822d-ead730bafd36" InformativeScreenshot="ba250e23694bbf50f97f2257a941910f" Selector="&lt;webctrl aaname='Bitcoin SVBSV*Balance:*' tag='A' /&gt;">
                                         <ui:Target.TimeoutMS>
@@ -838,15 +847,15 @@
                                       </ui:Target>
                                     </ui:UiElementExists.Target>
                                   </ui:UiElementExists>
-                                  <If Condition="[Bitcoin_SV]" sap:VirtualizedContainerService.HintSize="688,2164" sap2010:WorkflowViewState.IdRef="If_14">
+                                  <If Condition="[Bitcoin_SV]" sap:VirtualizedContainerService.HintSize="496,1496" sap2010:WorkflowViewState.IdRef="If_14">
                                     <If.Then>
-                                      <Sequence sap:VirtualizedContainerService.HintSize="652,1978" sap2010:WorkflowViewState.IdRef="Sequence_65">
+                                      <Sequence sap:VirtualizedContainerService.HintSize="460,1310" sap2010:WorkflowViewState.IdRef="Sequence_65">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A '" sap:VirtualizedContainerService.HintSize="610,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A '" sap:VirtualizedContainerService.HintSize="418,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
                                           <ui:Click.CursorPosition>
                                             <ui:CursorPosition Position="Center">
                                               <ui:CursorPosition.OffsetX>
@@ -868,14 +877,14 @@
                                             </ui:Target>
                                           </ui:Click.Target>
                                         </ui:Click>
-                                        <Sequence DisplayName="BitcoinSV workflow" sap:VirtualizedContainerService.HintSize="610,1546" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                                        <Sequence DisplayName="BitcoinSV workflow" sap:VirtualizedContainerService.HintSize="418,878" sap2010:WorkflowViewState.IdRef="Sequence_64">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'BitcoinCa Page'" sap:VirtualizedContainerService.HintSize="568,51" sap2010:WorkflowViewState.IdRef="BrowserScope_6" InformativeScreenshot="e72e3878e7605c08bbd7cbb57c4b3259" Selector="&lt;html app='chrome.exe' title='* / Address / * — Blockchair' /&gt;">
+                                          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'BitcoinCa Page'" sap:VirtualizedContainerService.HintSize="376,51" sap2010:WorkflowViewState.IdRef="BrowserScope_6" InformativeScreenshot="e72e3878e7605c08bbd7cbb57c4b3259" Selector="&lt;html app='chrome.exe' title='* / Address / * — Blockchair' /&gt;">
                                             <ui:BrowserScope.Body>
                                               <ActivityAction x:TypeArguments="x:Object">
                                                 <ActivityAction.Argument>
@@ -933,14 +942,14 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </ui:BrowserScope>
-                                          <Sequence DisplayName="Split Words" sap:VirtualizedContainerService.HintSize="568,1363" sap2010:WorkflowViewState.IdRef="Sequence_63">
+                                          <Sequence DisplayName="Split Words" sap:VirtualizedContainerService.HintSize="376,695" sap2010:WorkflowViewState.IdRef="Sequence_63">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Assign sap:VirtualizedContainerService.HintSize="526,60" sap2010:WorkflowViewState.IdRef="Assign_39">
+                                            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_39">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:String">[currency]</OutArgument>
                                               </Assign.To>
@@ -948,7 +957,7 @@
                                                 <InArgument x:TypeArguments="x:String">BSV</InArgument>
                                               </Assign.Value>
                                             </Assign>
-                                            <Sequence DisplayName="Get cash Balance" sap:VirtualizedContainerService.HintSize="526,66" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                                            <Sequence DisplayName="Get cash Balance" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_56">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1058,7 +1067,7 @@
                                                 </If.Else>
                                               </If>
                                             </Sequence>
-                                            <Sequence DisplayName="Get cash Total Received" sap:VirtualizedContainerService.HintSize="526,66" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                                            <Sequence DisplayName="Get cash Total Received" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_59">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="x:String" Name="str_cash_TotalReceived" />
                                                 <Variable x:TypeArguments="x:String" Name="split_TotalReceived" />
@@ -1175,10 +1184,10 @@
                                                 </If.Else>
                                               </If>
                                             </Sequence>
-                                            <Sequence DisplayName="Get cash Total Spent" sap:VirtualizedContainerService.HintSize="526,734" sap2010:WorkflowViewState.IdRef="Sequence_62">
+                                            <Sequence DisplayName="Get cash Total Spent" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_62">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
@@ -1262,10 +1271,10 @@
                                                 </If.Then>
                                               </If>
                                             </Sequence>
-                                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{currency, Address, Crypto_Balance, Crypto_Balance_USD, Crypto_Total_Received, Crypto_Total_Received_USD, Crypto_Total_Spent, Crypto_Total_Spent_USD}]" DataTable="[BuildDataTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="526,185" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+                                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{currency, Address, Crypto_Balance, Crypto_Balance_USD, Crypto_Total_Received, Crypto_Total_Received_USD, Crypto_Total_Spent, Crypto_Total_Spent_USD,DateString}]" DataTable="[BuildDataTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
                                           </Sequence>
                                         </Sequence>
-                                        <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image Back" sap:VirtualizedContainerService.HintSize="610,154" sap2010:WorkflowViewState.IdRef="ClickImage_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True">
+                                        <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image Back" sap:VirtualizedContainerService.HintSize="418,154" sap2010:WorkflowViewState.IdRef="ClickImage_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True">
                                           <ui:ClickImage.CursorPosition>
                                             <ui:CursorPosition Position="Center">
                                               <ui:CursorPosition.OffsetX>
@@ -1314,7 +1323,7 @@
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:UiElementExists DisplayName="Element Exists 'A '" Exists="[Bitcoin]" sap:VirtualizedContainerService.HintSize="688,106" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+                                  <ui:UiElementExists DisplayName="Element Exists 'A '" Exists="[Bitcoin]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
                                     <ui:UiElementExists.Target>
                                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e97f58de-02a6-438a-822d-ead730bafd36" InformativeScreenshot="9be7de94d5a63626daecba015062d02d" Selector="&lt;webctrl aaname='BitcoinBTC*Balance:* B*' tag='A' /&gt;">
                                         <ui:Target.TimeoutMS>
@@ -1326,16 +1335,16 @@
                                       </ui:Target>
                                     </ui:UiElementExists.Target>
                                   </ui:UiElementExists>
-                                  <If Condition="[Bitcoin]" sap:VirtualizedContainerService.HintSize="688,2155" sap2010:WorkflowViewState.IdRef="If_18">
+                                  <If Condition="[Bitcoin]" sap:VirtualizedContainerService.HintSize="484,1496" sap2010:WorkflowViewState.IdRef="If_18">
                                     <If.Then>
-                                      <Sequence sap:VirtualizedContainerService.HintSize="652,1969" sap2010:WorkflowViewState.IdRef="Sequence_80">
+                                      <Sequence sap:VirtualizedContainerService.HintSize="418,1310" sap2010:WorkflowViewState.IdRef="Sequence_80">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A '" sap:VirtualizedContainerService.HintSize="610,106" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A '" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
                                           <ui:Click.CursorPosition>
                                             <ui:CursorPosition Position="Center">
                                               <ui:CursorPosition.OffsetX>
@@ -1357,14 +1366,14 @@
                                             </ui:Target>
                                           </ui:Click.Target>
                                         </ui:Click>
-                                        <Sequence DisplayName="Bitcoin workflow" sap:VirtualizedContainerService.HintSize="610,1537" sap2010:WorkflowViewState.IdRef="Sequence_79">
+                                        <Sequence DisplayName="Bitcoin workflow" sap:VirtualizedContainerService.HintSize="376,878" sap2010:WorkflowViewState.IdRef="Sequence_79">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'BitcoinCa Page'" sap:VirtualizedContainerService.HintSize="568,51" sap2010:WorkflowViewState.IdRef="BrowserScope_7" InformativeScreenshot="e72e3878e7605c08bbd7cbb57c4b3259" Selector="&lt;html app='chrome.exe' title='* / Address / * — Blockchair' /&gt;">
+                                          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'BitcoinCa Page'" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="BrowserScope_7" InformativeScreenshot="e72e3878e7605c08bbd7cbb57c4b3259" Selector="&lt;html app='chrome.exe' title='* / Address / * — Blockchair' /&gt;">
                                             <ui:BrowserScope.Body>
                                               <ActivityAction x:TypeArguments="x:Object">
                                                 <ActivityAction.Argument>
@@ -1422,7 +1431,7 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </ui:BrowserScope>
-                                          <Sequence DisplayName="Split Words" sap:VirtualizedContainerService.HintSize="568,1129" sap2010:WorkflowViewState.IdRef="Sequence_78">
+                                          <Sequence DisplayName="Split Words" sap:VirtualizedContainerService.HintSize="334,470" sap2010:WorkflowViewState.IdRef="Sequence_78">
                                             <Sequence.Variables>
                                               <Variable x:TypeArguments="s:String[]" Name="words_cash_balance" />
                                               <Variable x:TypeArguments="x:String" Name="str_cash_balance" />
@@ -1435,7 +1444,7 @@
                                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Assign sap:VirtualizedContainerService.HintSize="526,60" sap2010:WorkflowViewState.IdRef="Assign_46">
+                                            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_46">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:String">[currency]</OutArgument>
                                               </Assign.To>
@@ -1443,7 +1452,7 @@
                                                 <InArgument x:TypeArguments="x:String">BTC</InArgument>
                                               </Assign.Value>
                                             </Assign>
-                                            <Sequence DisplayName="Get cash Balance" sap:VirtualizedContainerService.HintSize="526,66" sap2010:WorkflowViewState.IdRef="Sequence_71">
+                                            <Sequence DisplayName="Get cash Balance" sap:VirtualizedContainerService.HintSize="262,66" sap2010:WorkflowViewState.IdRef="Sequence_71">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1553,7 +1562,7 @@
                                                 </If.Else>
                                               </If>
                                             </Sequence>
-                                            <Sequence DisplayName="Get cash Total Received" sap:VirtualizedContainerService.HintSize="526,66" sap2010:WorkflowViewState.IdRef="Sequence_74">
+                                            <Sequence DisplayName="Get cash Total Received" sap:VirtualizedContainerService.HintSize="262,66" sap2010:WorkflowViewState.IdRef="Sequence_74">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="x:String" Name="str_cash_TotalReceived" />
                                                 <Variable x:TypeArguments="x:String" Name="split_TotalReceived" />
@@ -1669,7 +1678,7 @@
                                                 </If.Else>
                                               </If>
                                             </Sequence>
-                                            <Sequence DisplayName="Get cash Total Spent" sap:VirtualizedContainerService.HintSize="526,725" sap2010:WorkflowViewState.IdRef="Sequence_77">
+                                            <Sequence DisplayName="Get cash Total Spent" sap:VirtualizedContainerService.HintSize="262,66" sap2010:WorkflowViewState.IdRef="Sequence_77">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="x:String" Name="str_cash_TotalReceived" />
                                                 <Variable x:TypeArguments="x:String" Name="split_TotalReceived" />
@@ -1683,7 +1692,7 @@
                                               </Sequence.Variables>
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
@@ -1777,9 +1786,9 @@
                                               </If>
                                             </Sequence>
                                           </Sequence>
-                                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{currency, Address, Crypto_Balance, Crypto_Balance_USD, Crypto_Total_Received, Crypto_Total_Received_USD, Crypto_Total_Spent, Crypto_Total_Spent_USD}]" DataTable="[BuildDataTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="568,185" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
+                                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{currency, Address, Crypto_Balance, Crypto_Balance_USD, Crypto_Total_Received, Crypto_Total_Received_USD, Crypto_Total_Spent, Crypto_Total_Spent_USD,DateString}]" DataTable="[BuildDataTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
                                         </Sequence>
-                                        <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image Back" sap:VirtualizedContainerService.HintSize="610,154" sap2010:WorkflowViewState.IdRef="ClickImage_7" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True">
+                                        <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image Back" sap:VirtualizedContainerService.HintSize="376,154" sap2010:WorkflowViewState.IdRef="ClickImage_7" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True">
                                           <ui:ClickImage.CursorPosition>
                                             <ui:CursorPosition Position="Center">
                                               <ui:CursorPosition.OffsetX>
@@ -1824,7 +1833,7 @@
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:UiElementExists DisplayName="Element Exists 'A '" Exists="[Grostlcoin]" sap:VirtualizedContainerService.HintSize="857,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                                  <ui:UiElementExists DisplayName="Element Exists 'A '" Exists="[Grostlcoin]" sap:VirtualizedContainerService.HintSize="496,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
                                     <ui:UiElementExists.Target>
                                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e97f58de-02a6-438a-822d-ead730bafd36" InformativeScreenshot="a439d7bcb336217a8fbc158983217f17" Selector="&lt;webctrl aaname='Groestlcoin*Balance:*' tag='A' /&gt;">
                                         <ui:Target.TimeoutMS>
@@ -1836,16 +1845,16 @@
                                       </ui:Target>
                                     </ui:UiElementExists.Target>
                                   </ui:UiElementExists>
-                                  <If Condition="[Grostlcoin]" sap:VirtualizedContainerService.HintSize="857,3278" sap2010:WorkflowViewState.IdRef="If_22">
+                                  <If Condition="[Grostlcoin]" sap:VirtualizedContainerService.HintSize="496,1496" sap2010:WorkflowViewState.IdRef="If_22">
                                     <If.Then>
-                                      <Sequence sap:VirtualizedContainerService.HintSize="821,3092" sap2010:WorkflowViewState.IdRef="Sequence_95">
+                                      <Sequence sap:VirtualizedContainerService.HintSize="460,1310" sap2010:WorkflowViewState.IdRef="Sequence_95">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A '" sap:VirtualizedContainerService.HintSize="779,106" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A '" sap:VirtualizedContainerService.HintSize="418,106" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT">
                                           <ui:Click.CursorPosition>
                                             <ui:CursorPosition Position="Center">
                                               <ui:CursorPosition.OffsetX>
@@ -1867,14 +1876,14 @@
                                             </ui:Target>
                                           </ui:Click.Target>
                                         </ui:Click>
-                                        <Sequence DisplayName="Bitcoin workflow" sap:VirtualizedContainerService.HintSize="779,2660" sap2010:WorkflowViewState.IdRef="Sequence_94">
+                                        <Sequence DisplayName="Bitcoin workflow" sap:VirtualizedContainerService.HintSize="418,878" sap2010:WorkflowViewState.IdRef="Sequence_94">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'BitcoinCa Page'" sap:VirtualizedContainerService.HintSize="737,636" sap2010:WorkflowViewState.IdRef="BrowserScope_8" InformativeScreenshot="e72e3878e7605c08bbd7cbb57c4b3259" Selector="&lt;html app='chrome.exe' title='* / Address / * — Blockchair' /&gt;">
+                                          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'BitcoinCa Page'" sap:VirtualizedContainerService.HintSize="376,51" sap2010:WorkflowViewState.IdRef="BrowserScope_8" InformativeScreenshot="e72e3878e7605c08bbd7cbb57c4b3259" Selector="&lt;html app='chrome.exe' title='* / Address / * — Blockchair' /&gt;">
                                             <ui:BrowserScope.Body>
                                               <ActivityAction x:TypeArguments="x:Object">
                                                 <ActivityAction.Argument>
@@ -1927,12 +1936,12 @@
                                             </ui:BrowserScope.Body>
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </ui:BrowserScope>
-                                          <Sequence DisplayName="Split Words" sap:VirtualizedContainerService.HintSize="737,1892" sap2010:WorkflowViewState.IdRef="Sequence_93">
+                                          <Sequence DisplayName="Split Words" sap:VirtualizedContainerService.HintSize="376,695" sap2010:WorkflowViewState.IdRef="Sequence_93">
                                             <Sequence.Variables>
                                               <Variable x:TypeArguments="s:String[]" Name="words_cash_balance" />
                                               <Variable x:TypeArguments="x:String" Name="str_cash_balance" />
@@ -1945,7 +1954,7 @@
                                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Assign sap:VirtualizedContainerService.HintSize="695,60" sap2010:WorkflowViewState.IdRef="Assign_53">
+                                            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_53">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:String">[currency]</OutArgument>
                                               </Assign.To>
@@ -1953,10 +1962,10 @@
                                                 <InArgument x:TypeArguments="x:String">GRS</InArgument>
                                               </Assign.Value>
                                             </Assign>
-                                            <Sequence DisplayName="Get cash Balance" sap:VirtualizedContainerService.HintSize="695,696" sap2010:WorkflowViewState.IdRef="Sequence_86">
+                                            <Sequence DisplayName="Get cash Balance" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_86">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
@@ -2063,7 +2072,7 @@
                                                 </If.Else>
                                               </If>
                                             </Sequence>
-                                            <Sequence DisplayName="Get cash Total Received" sap:VirtualizedContainerService.HintSize="695,66" sap2010:WorkflowViewState.IdRef="Sequence_89">
+                                            <Sequence DisplayName="Get cash Total Received" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_89">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="x:String" Name="str_cash_TotalReceived" />
                                                 <Variable x:TypeArguments="x:String" Name="split_TotalReceived" />
@@ -2179,7 +2188,7 @@
                                                 </If.Else>
                                               </If>
                                             </Sequence>
-                                            <Sequence DisplayName="Get cash Total Spent" sap:VirtualizedContainerService.HintSize="695,633" sap2010:WorkflowViewState.IdRef="Sequence_92">
+                                            <Sequence DisplayName="Get cash Total Spent" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_92">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="x:String" Name="str_cash_TotalReceived" />
                                                 <Variable x:TypeArguments="x:String" Name="split_TotalReceived" />
@@ -2193,7 +2202,7 @@
                                               </Sequence.Variables>
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
@@ -2276,10 +2285,10 @@
                                                 </If.Then>
                                               </If>
                                             </Sequence>
-                                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{currency, Address, Crypto_Balance, Crypto_Balance_USD, Crypto_Total_Received, Crypto_Total_Received_USD, Crypto_Total_Spent, Crypto_Total_Spent_USD}]" DataTable="[BuildDataTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="695,185" sap2010:WorkflowViewState.IdRef="AddDataRow_5" />
+                                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{currency, Address, Crypto_Balance, Crypto_Balance_USD, Crypto_Total_Received, Crypto_Total_Received_USD, Crypto_Total_Spent, Crypto_Total_Spent_USD,DateString}]" DataTable="[BuildDataTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="AddDataRow_5" />
                                           </Sequence>
                                         </Sequence>
-                                        <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image Back" sap:VirtualizedContainerService.HintSize="779,154" sap2010:WorkflowViewState.IdRef="ClickImage_8" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True">
+                                        <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image Back" sap:VirtualizedContainerService.HintSize="418,154" sap2010:WorkflowViewState.IdRef="ClickImage_8" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True">
                                           <ui:ClickImage.CursorPosition>
                                             <ui:CursorPosition Position="Center">
                                               <ui:CursorPosition.OffsetX>
@@ -2327,7 +2336,7 @@
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:UiElementExists DisplayName="Element Exists 'push button  Close'" Exists="[direct]" sap:VirtualizedContainerService.HintSize="554,106" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
+                                  <ui:UiElementExists DisplayName="Element Exists 'push button  Close'" Exists="[direct]" sap:VirtualizedContainerService.HintSize="593,106" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
                                     <ui:UiElementExists.Target>
                                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ddf3d6f4-7694-4c9a-8da7-6fd7596b1d13" InformativeScreenshot="bb743b6da0054b3668199b6af7d2052f" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='* / Account / *' /&gt;&lt;ctrl name='* / Account / *' role='pane' /&gt;&lt;ctrl name='Google Chrome' role='pane' /&gt;&lt;ctrl name='* / Account / *' role='page tab' /&gt;">
                                         <ui:Target.TimeoutMS>
@@ -2339,15 +2348,15 @@
                                       </ui:Target>
                                     </ui:UiElementExists.Target>
                                   </ui:UiElementExists>
-                                  <If Condition="[direct]" sap:VirtualizedContainerService.HintSize="554,1349" sap2010:WorkflowViewState.IdRef="If_26">
+                                  <If Condition="[direct]" sap:VirtualizedContainerService.HintSize="593,1450" sap2010:WorkflowViewState.IdRef="If_26">
                                     <If.Then>
-                                      <Sequence sap:VirtualizedContainerService.HintSize="518,1163" sap2010:WorkflowViewState.IdRef="Sequence_110">
+                                      <Sequence sap:VirtualizedContainerService.HintSize="557,1264" sap2010:WorkflowViewState.IdRef="Sequence_110">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Sequence DisplayName="Screen Scraping" sap:VirtualizedContainerService.HintSize="476,1071" sap2010:WorkflowViewState.IdRef="Sequence_109">
+                                        <Sequence DisplayName="Screen Scraping" sap:VirtualizedContainerService.HintSize="515,1172" sap2010:WorkflowViewState.IdRef="Sequence_109">
                                           <Sequence.Variables>
                                             <Variable x:TypeArguments="ui:GenericValue" Name="ChromeExeEthereum" />
                                           </Sequence.Variables>
@@ -2356,7 +2365,7 @@
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="CommentOut_12">
+                                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="473,51" sap2010:WorkflowViewState.IdRef="CommentOut_12">
                                             <ui:CommentOut.Body>
                                               <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="476,874" sap2010:WorkflowViewState.IdRef="Sequence_117">
                                                 <sap:WorkflowViewStateService.ViewState>
@@ -2455,7 +2464,7 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </ui:CommentOut>
-                                          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'BitcoinCa Page'" sap:VirtualizedContainerService.HintSize="434,782" sap2010:WorkflowViewState.IdRef="BrowserScope_9" InformativeScreenshot="3904c46fc45a79f66860e4a11893d73c" Selector="&lt;html app='chrome.exe' title='* / Account / * — Blockchair' /&gt;">
+                                          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'BitcoinCa Page'" sap:VirtualizedContainerService.HintSize="473,51" sap2010:WorkflowViewState.IdRef="BrowserScope_9" InformativeScreenshot="3904c46fc45a79f66860e4a11893d73c" Selector="&lt;html app='chrome.exe' title='* / Account / * — Blockchair' /&gt;">
                                             <ui:BrowserScope.Body>
                                               <ActivityAction x:TypeArguments="x:Object">
                                                 <ActivityAction.Argument>
@@ -2520,19 +2529,19 @@
                                             </ui:BrowserScope.Body>
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                          </ui:BrowserScope>
-                                          <Sequence DisplayName="Split Words" sap:VirtualizedContainerService.HintSize="434,66" sap2010:WorkflowViewState.IdRef="Sequence_108">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="695,162" sap2010:WorkflowViewState.IdRef="MultipleAssign_18">
+                                          </ui:BrowserScope>
+                                          <Sequence DisplayName="Split Words" sap:VirtualizedContainerService.HintSize="473,898" sap2010:WorkflowViewState.IdRef="Sequence_108">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="431,162" sap2010:WorkflowViewState.IdRef="MultipleAssign_18">
                                               <ui:MultipleAssign.AssignOperations>
                                                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_97">
@@ -2562,8 +2571,8 @@
                                                 </scg:List>
                                               </ui:MultipleAssign.AssignOperations>
                                             </ui:MultipleAssign>
-                                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="695,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[word_currency.Length.ToString]" />
-                                            <Sequence DisplayName="Get cash Balance" sap:VirtualizedContainerService.HintSize="695,66" sap2010:WorkflowViewState.IdRef="Sequence_101">
+                                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="431,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[word_currency.Length.ToString]" />
+                                            <Sequence DisplayName="Get cash Balance" sap:VirtualizedContainerService.HintSize="431,66" sap2010:WorkflowViewState.IdRef="Sequence_101">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2673,7 +2682,7 @@
                                                 </If.Else>
                                               </If>
                                             </Sequence>
-                                            <Sequence DisplayName="Get cash Total Received" sap:VirtualizedContainerService.HintSize="695,696" sap2010:WorkflowViewState.IdRef="Sequence_104">
+                                            <Sequence DisplayName="Get cash Total Received" sap:VirtualizedContainerService.HintSize="431,66" sap2010:WorkflowViewState.IdRef="Sequence_104">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="x:String" Name="str_cash_TotalReceived" />
                                                 <Variable x:TypeArguments="x:String" Name="split_TotalReceived" />
@@ -2682,7 +2691,7 @@
                                               </Sequence.Variables>
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
@@ -2789,7 +2798,7 @@
                                                 </If.Else>
                                               </If>
                                             </Sequence>
-                                            <Sequence DisplayName="Get cash Total Spent" sap:VirtualizedContainerService.HintSize="695,696" sap2010:WorkflowViewState.IdRef="Sequence_107">
+                                            <Sequence DisplayName="Get cash Total Spent" sap:VirtualizedContainerService.HintSize="431,66" sap2010:WorkflowViewState.IdRef="Sequence_107">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="x:String" Name="str_cash_TotalReceived" />
                                                 <Variable x:TypeArguments="x:String" Name="split_TotalReceived" />
@@ -2803,7 +2812,7 @@
                                               </Sequence.Variables>
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
@@ -2916,7 +2925,7 @@
                                                 </If.Else>
                                               </If>
                                             </Sequence>
-                                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{currency, Address, Crypto_Balance, Crypto_Balance_USD, Crypto_Total_Received, Crypto_Total_Received_USD, Crypto_Total_Spent, Crypto_Total_Spent_USD}]" DataTable="[BuildDataTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="695,185" sap2010:WorkflowViewState.IdRef="AddDataRow_6" />
+                                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{currency, Address, Crypto_Balance, Crypto_Balance_USD, Crypto_Total_Received, Crypto_Total_Received_USD, Crypto_Total_Spent, Crypto_Total_Spent_USD,DateString}]" DataTable="[BuildDataTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="431,185" sap2010:WorkflowViewState.IdRef="AddDataRow_6" />
                                           </Sequence>
                                         </Sequence>
                                       </Sequence>
@@ -2931,7 +2940,7 @@
                                       </Sequence>
                                     </If.Else>
                                   </If>
-                                  <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image Back" sap:VirtualizedContainerService.HintSize="554,154" sap2010:WorkflowViewState.IdRef="ClickImage_9" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True">
+                                  <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image Back" sap:VirtualizedContainerService.HintSize="593,154" sap2010:WorkflowViewState.IdRef="ClickImage_9" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True">
                                     <ui:ClickImage.CursorPosition>
                                       <ui:CursorPosition Position="Center">
                                         <ui:CursorPosition.OffsetX>
@@ -2959,7 +2968,7 @@
                                 </Sequence>
                                 <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_18">
                                   <ui:CommentOut.Body>
-                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,158" sap2010:WorkflowViewState.IdRef="Sequence_140">
+                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="941,4627" sap2010:WorkflowViewState.IdRef="Sequence_140">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -3652,26 +3661,8 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ExcelApplicationScope>
-      <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[BuildDataTable]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="661,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="Data.xlsx" />
+      <ui:WriteRange AddHeaders="True" DataTable="[BuildDataTable]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="661,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="Data.xlsx" />
       <Delay DisplayName=" Delay 10 seconds" Duration="00:00:10" sap:VirtualizedContainerService.HintSize="661,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="661,51" sap2010:WorkflowViewState.IdRef="CommentOut_6">
-        <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_23">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:CloseWindow TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Window 'chrome.exe Bitcoin'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="CloseWindow_1" InformativeScreenshot="ed99a8029732e2fcb3d220132bbed785" Selector="&lt;html app='chrome.exe' title='Bitcoin * / Address / * — Blockchair' /&gt;" WaitForReady="INTERACTIVE" />
-          </Sequence>
-        </ui:CommentOut.Body>
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </ui:CommentOut>
     </Sequence>
   </Sequence>
 </Activity>

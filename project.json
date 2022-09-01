@@ -1,8 +1,9 @@
 {
   "name": "New_Blockchain",
   "description": "Blank Process",
-  "main": "Main.xaml",
+  "main": "Bitcoin_Ethereum.xaml",
   "dependencies": {
+    "UiPath.Database.Activities": "[1.7.0]",
     "UiPath.Excel.Activities": "[2.12.3]",
     "UiPath.Mail.Activities": "[1.15.2]",
     "UiPath.System.Activities": "[22.4.4]",
@@ -45,8 +46,8 @@
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "Main.xaml",
-      "uniqueId": "323f8b81-6e5b-4c86-935c-dd7e8c91fe19",
+      "filePath": "Bitcoin_Ethereum.xaml",
+      "uniqueId": "6524e658-ed7e-430c-b512-1e0d7f447918",
       "input": [],
       "output": []
     }
